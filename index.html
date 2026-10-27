@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kwenta - PH Market Budget Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>🇵🇭 Kwenta</h1>
+            <p>PH Market Budget Planner</p>
+        </header>
+
+        <!-- Auth Section placeholder -->
+        <section id="auth-section" class="card">
+            <h3>Account Access</h3>
+            <button id="login-btn" class="btn-primary">Sign In / Register</button>
+            <p id="user-status" class="subtext">Running in local offline mode</p>
+        </section>
+
+        <!-- Budget Input -->
+        <section class="card">
+            <h3>1. Set Your Budget</h3>
+            <div class="input-group">
+                <span class="currency">₱</span>
+                <input type="number" id="total-budget" value="1000" min="0" placeholder="Enter total budget">
+            </div>
+        </section>
+
+        <!-- Market Calculator -->
+        <section class="card">
+            <h3>2. Add Market Items</h3>
+            <div class="calculator-row">
+                <select id="item-select">
+                    <option value="55">Bigas (Regular Milled) - ₱55/kg</option>
+                    <option value="65">Bigas (Well-Milled) - ₱65/kg</option>
+                    <option value="180">Manok (Whole Chicken) - ₱180/kg</option>
+                    <option value="320">Liempo (Pork Belly) - ₱320/kg</option>
+                    <option value="400">Baka (Beef Rump) - ₱400/kg</option>
+                    <option value="140">Talong (Eggplant) - ₱140/kg</option>
+                    <option value="90">Sibuyas (Onion) - ₱90/kg</option>
+                    <option value="25">Sardinas (Canned) - ₱25/can</option>
+                </select>
+                <input type="number" id="item-qty" value="1" min="1" style="width: 70px;">
+                <button id="add-item-btn" class="btn-accent">Add</button>
+            </div>
+
+            <ul id="shopping-list">
+                <!-- Items will appear here dynamically -->
+            </ul>
+        </section>
+
+        <!-- Summary Status Display -->
+        <section class="card summary-card">
+            <h3>3. Expense Summary</h3>
+            <div class="summary-line"><span>Total Budget:</span> <span id="display-budget">₱1,000.00</span></div>
+            <div class="summary-line"><span>Total Spent:</span> <span id="display-spent">₱0.00</span></div>
+            <hr>
+            <div class="summary-line total">
+                <span>Remaining:</span> 
+                <span id="display-remaining">₱1,000.00</span>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
